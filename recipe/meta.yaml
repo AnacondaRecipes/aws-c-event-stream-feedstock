@@ -19,13 +19,15 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - ninja
+    - ninja-base
   host:
     - aws-c-common 0.8.5
     - aws-checksums 0.1.13
+    - aws-c-io 0.13.10
   run:
     - aws-c-common >=0.8.5,<0.8.6.0a0
     - aws-checksums >=0.1.13,<0.1.14.0a0
+    - aws-c-io >=0.13.10,<0.14.10.0a0
 
 test:
   commands:
