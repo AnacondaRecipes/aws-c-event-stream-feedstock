@@ -1,5 +1,5 @@
 {% set name = "aws-c-event-stream" %}
-{% set version = "0.2.15" %}
+{% set version = "0.5.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 4ff2ada07ede3c6afa4b8e6e20de541e717038307f29b38c27efa7c4d875ee26
+  sha256: cef8b78e362836d15514110fb43a0a0c7a86b0a210d5fe25fd248a82027a7272
 
 build:
   number: 0
@@ -21,9 +21,9 @@ requirements:
     - {{ compiler('cxx') }}
     - ninja-base
   host:
-    - aws-c-common 0.8.5
-    - aws-checksums 0.1.13
-    - aws-c-io 0.13.10
+    - aws-c-common 0.11.1
+    - aws-checksums 0.2.3
+    - aws-c-io 0.17.0
   run:
     - aws-c-common # pinning by run_exports
     - aws-checksums # pinning by run_exports
