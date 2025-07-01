@@ -7,8 +7,13 @@ cmake -G "Ninja" ^
       -DCMAKE_INSTALL_LIBDIR=lib ^
       -DCMAKE_BUILD_TYPE=Release ^
       -DBUILD_SHARED_LIBS=ON ^
+      -DENABLE_TESTING=ON ^
+      -DCMAKE_POSITION_INDEPENDENT_CODE=ON ^
       ..
 if errorlevel 1 exit 1
 
-ninja install
+cmake --build . --config Release --target install
+if errorlevel 1 exit 1
+
+ctest --output-on-failure
 if errorlevel 1 exit 1
