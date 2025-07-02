@@ -28,7 +28,7 @@ test:
   commands:
     - test -f $PREFIX/lib/libaws-c-event-stream${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/aws/event-stream/event_stream.h  # [unix]
-    - if not exist %PREFIX%\\Library\\bin\\libaws-c-event-stream.dll exit 1  # [win]
+    - if not exist %PREFIX%\\Library\\bin\\aws-c-event-stream.dll exit 1  # [win]
     - if not exist %PREFIX%\\Library\\include\\aws\\event-stream\\event_stream.h exit 1  # [win]
 
 about:
