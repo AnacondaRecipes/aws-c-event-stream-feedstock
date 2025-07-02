@@ -1,3 +1,3 @@
 channels:
   - https://staging.continuum.io/prefect/fs/aws-c-io-feedstock/pr4/d06c21e
-  - https://staging.continuum.io/prefect/fs/aws-c-checksums-feedstock/pr6/da9f220
+  - https://staging.continuum.io/prefect/fs/aws-checksums-feedstock/pr6/da9f220
