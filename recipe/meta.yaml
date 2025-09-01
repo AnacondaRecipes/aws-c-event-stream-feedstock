@@ -1,5 +1,5 @@
 {% set name = "aws-c-event-stream" %}
-{% set version = "0.5.5" %}
+{% set version = "0.5.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: f6e55c8fd6afd7f904e08d36c3210e199ece5dc838f0f8457b43b72ec4d818e9
+  sha256: e94a8172e7d198d11bc7aa769c5334f1a8518f2b5bd4446d37d18fb5683623fd
 
 build:
   number: 0
@@ -16,20 +16,21 @@ build:
 
 requirements:
   build:
-    - cmake >=3.9
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
+    - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.3
+    - aws-c-common 0.12.4
     - aws-checksums 0.2.7
-    - aws-c-io 0.20.1
+    - aws-c-io 0.21.4
 
 test:
   commands:
     - test -f $PREFIX/lib/libaws-c-event-stream${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/aws/event-stream/event_stream.h  # [unix]
-    - if not exist %PREFIX%\\Library\\bin\\aws-c-event-stream.dll exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\include\\aws\\event-stream\\event_stream.h exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\aws-c-event-stream.dll exit 1  # [win]
+    - if not exist %LIBRARY_INC%\aws\event-stream\event_stream.h exit 1  # [win]
 
 about:
   home: https://github.com/awslabs/aws-c-event-stream
