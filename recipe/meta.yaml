@@ -1,5 +1,5 @@
 {% set name = "aws-c-event-stream" %}
-{% set version = "0.5.6" %}
+{% set version = "0.5.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e94a8172e7d198d11bc7aa769c5334f1a8518f2b5bd4446d37d18fb5683623fd
+  sha256: e9371ffe050c24ca4eda439d58a06285db88b550e9cbec006d6ea21db02d424a
 
 build:
   number: 0
@@ -21,9 +21,9 @@ requirements:
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.4
-    - aws-checksums 0.2.7
-    - aws-c-io 0.21.4
+    - aws-c-common 0.12.6
+    - aws-checksums 0.2.8
+    - aws-c-io 0.23.3
 
 test:
   commands:
