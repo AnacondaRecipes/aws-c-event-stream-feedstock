@@ -10,7 +10,7 @@ source:
   sha256: 334b2abfe0cb5c68d79d52525598fdd5f6052b93a17a78a4b1ada7fa1be252c0
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("aws-c-event-stream", max_pin="x.x.x") }}
 
@@ -22,9 +22,9 @@ requirements:
     - ninja-base
     - zlib
   host:
-    - aws-c-common 0.14.0
+    - aws-c-common 0.14.5
     - aws-checksums 0.2.10
-    - aws-c-io 0.26.3
+    - aws-c-io 0.27.6
 
 test:
   commands:
